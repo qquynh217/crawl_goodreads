@@ -3,8 +3,8 @@ import requests
 from crawl_selenium import getBookInfo
 import csv
 
-startPage = 20
-endPage = 30
+startPage = 1
+endPage = 3 
 
 listBookUrl = "https://www.goodreads.com/list/show/1.Best_Books_Ever?page="
 baseUrl = "https://www.goodreads.com"
