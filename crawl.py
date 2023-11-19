@@ -4,7 +4,7 @@ from crawl_selenium import getBookInfo
 import csv
 
 startPage = 1
-endPage = 3 
+endPage = 3
 
 listBookUrl = "https://www.goodreads.com/list/show/1.Best_Books_Ever?page="
 baseUrl = "https://www.goodreads.com"
@@ -60,6 +60,8 @@ for page in range(startPage, endPage):
                 book = getBookInfo(baseUrl + link, scores[i])
                 writer.writerows([book])
                 log_f.write(str(count) + ". " + link + "\n")
+                if book["title"] == None or book["date_published"] == None:
+                    error_f.write(str(count) + ". " + link + "\n")
             except:
                 error_f.write(str(count) + ". " + link + "\n")
                 pass
