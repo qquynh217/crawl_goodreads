@@ -178,4 +178,4 @@ def getBookInfo(link, score):
     return book
 
 
-# print(getBookInfo("https://www.goodreads.com/book/show/119073.The_Name_of_the_Rose"))
+print(getBookInfo("https://www.goodreads.com/book/show/119073.The_Name_of_the_Rose",None))
