@@ -3,6 +3,9 @@ import requests
 from crawl_selenium import getBookInfo
 import csv
 
+startPage = 1
+endPage = 3 
+
 listBookUrl = "https://www.goodreads.com/list/show/1.Best_Books_Ever?page="
 baseUrl = "https://www.goodreads.com"
 field_names = [
@@ -40,7 +43,7 @@ def getListBookLink(url):
 
 log_f = open("log.txt", "a")
 error_f = open("exception.txt", "a")
-for page in range(3, 20):
+for page in range(startPage, endPage):
     count = 1
     [list, scores] = getListBookLink(listBookUrl + str(page))
 
